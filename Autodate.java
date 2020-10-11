@@ -31,7 +31,7 @@ public class Autodate {
             System.out.println("Usuario o contraseña son incorrectos, por favor intentelo de nuevo");
             
         }
-        //hola mundo jijiji
+        
     }
     
 }
