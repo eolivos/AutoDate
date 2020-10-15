@@ -17,11 +17,11 @@ public class Ventana_2 extends JFrame implements ActionListener{
         setLayout(null);
         setTitle("Autodate");
         getContentPane().setBackground(new Color(174,214,241));
-        setIconImage(new ImageIcon(getClass().getResource("images/icon.png")).getImage());
+        setIconImage(new ImageIcon(getClass().getResource("images/carro.png")).getImage());
             
         label_imagen = new JLabel();
-        label_imagen.setIcon(new ImageIcon(getClass().getResource("images/logo.png")));
-        label_imagen.setBounds(25,100,420,200);
+        label_imagen.setIcon(new ImageIcon(getClass().getResource("images/carro.png")));
+        label_imagen.setBounds(0,100,420,200);
         add(label_imagen);
         
         menubar = new JMenuBar();
@@ -47,22 +47,22 @@ public class Ventana_2 extends JFrame implements ActionListener{
         menu1.add(menuitem4);
         
         label_saludo = new JLabel("Ingreso exitoso. Bienvenido de nuevo operador.");
-        label_saludo.setBounds(250,150,450,30);
+        label_saludo.setBounds(250,50,450,30);
         add(label_saludo);
         label_operacion1 = new JLabel("Seleccione el proceso a realizar");
-        label_operacion1.setBounds(300,200,450,30);
+        label_operacion1.setBounds(300,100,450,30);
         add(label_operacion1);
         
         boton_consultar = new JButton("Consultar estado de un vehiculo en el sistema.");
-        boton_consultar.setBounds(250,250,300,30);
+        boton_consultar.setBounds(250,150,300,30);
         add(boton_consultar);
         boton_consultar.addActionListener(this);
         boton_ingresar = new JButton("Ingresar vehiculo nuevo al sistema.");
-        boton_ingresar.setBounds(250,300,300,30);
+        boton_ingresar.setBounds(250,200,300,30);
         add(boton_ingresar);
         boton_ingresar.addActionListener(this);
         boton_proceso = new JButton("Ingresar vehiculo nuevo al sistema.");
-        boton_proceso.setBounds(250,350,300,30);
+        boton_proceso.setBounds(250,250,300,30);
         add(boton_proceso);
         boton_proceso.addActionListener(this);
  }

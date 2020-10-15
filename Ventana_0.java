@@ -3,7 +3,7 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
 
-public class Interfaz extends JFrame implements ActionListener{
+public class Ventana_0 extends JFrame implements ActionListener{
     private JMenuBar menubar;
     private JMenu menu1, menu2;
     private JMenuItem menuitem1, menuitem2, menuitem3, menuitem4;
@@ -12,7 +12,7 @@ public class Interfaz extends JFrame implements ActionListener{
     private JButton boton_verificación;
     String usuario="1", contraseña="2";
     
-    public Interfaz(){
+    public Ventana_0(){
         
         setLayout(null);
         setTitle("Autodate");
@@ -101,7 +101,7 @@ public class Interfaz extends JFrame implements ActionListener{
 
  public static void main(String args[]){
     
-    Interfaz formulario1 = new Interfaz();
+    Ventana_0 formulario1 = new Ventana_0();
     formulario1.setBounds(0,0,800,500);
     formulario1.setVisible(true);
     formulario1.setResizable(false);

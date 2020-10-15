@@ -21,7 +21,7 @@ public class Ventana_1 extends JFrame implements ActionListener{
         
         label_imagen = new JLabel();
         label_imagen.setIcon(new ImageIcon(getClass().getResource("images/carro.png")));
-        label_imagen.setBounds(25,100,420,200);
+        label_imagen.setBounds(0,100,420,200);
         add(label_imagen);
         
         menubar = new JMenuBar();
