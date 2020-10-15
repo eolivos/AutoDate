@@ -2,27 +2,27 @@ package autodate;
 import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
-import java.awt.Color;
-//ventana ingreso del vehiculo
-public class Ventana_2 extends JFrame implements ActionListener{
 
+public class Interfaz extends JFrame implements ActionListener{
     private JMenuBar menubar;
     private JMenu menu1, menu2;
     private JMenuItem menuitem1, menuitem2, menuitem3, menuitem4;
-    private JLabel label_operacion1, label_saludo, label_imagen;
-    private JButton boton_consultar, boton_ingresar, boton_proceso;
+    private JTextField textfield_usuario, textfield_contraseña;
+    private JLabel label_bienvenida, label_usuario, label_contraseña, label_imagen;
+    private JButton boton_verificación;
+    String usuario="1", contraseña="2";
     
-    public Ventana_2(){
+    public Interfaz(){
         
         setLayout(null);
         setTitle("Autodate");
         getContentPane().setBackground(new Color(174,214,241));
-        setIconImage(new ImageIcon(getClass().getResource("images/icon.png")).getImage());
-            
+        setIconImage(new ImageIcon(getClass().getResource("images/carro.png")).getImage());
+        
         label_imagen = new JLabel();
         label_imagen.setIcon(new ImageIcon(getClass().getResource("images/logo.png")));
-        label_imagen.setBounds(25,100,420,200);
-        add(label_imagen);
+        label_imagen.setBounds(150,0,420,200);
+        add(label_imagen);        
         
         menubar = new JMenuBar();
         setJMenuBar(menubar);
@@ -46,29 +46,32 @@ public class Ventana_2 extends JFrame implements ActionListener{
         menuitem4.addActionListener(this);
         menu1.add(menuitem4);
         
-        label_saludo = new JLabel("Ingreso exitoso. Bienvenido de nuevo operador.");
-        label_saludo.setBounds(250,150,450,30);
-        add(label_saludo);
-        label_operacion1 = new JLabel("Seleccione el proceso a realizar");
-        label_operacion1.setBounds(300,200,450,30);
-        add(label_operacion1);
+        label_bienvenida = new JLabel("Buen dia operador. " + "\n\n" + "Por favor ingrese su usuario y contraseña.");
+        label_bienvenida.setBounds(200,140,500,200);
+        add(label_bienvenida);
+        label_usuario = new JLabel("Usuario:");
+        label_usuario.setBounds(250,280,100,30);
+        add(label_usuario);
+        label_contraseña = new JLabel("Contraseña:");
+        label_contraseña.setBounds(250,310,100,30);
+        add(label_contraseña);
         
-        boton_consultar = new JButton("Consultar estado de un vehiculo en el sistema.");
-        boton_consultar.setBounds(250,250,300,30);
-        add(boton_consultar);
-        boton_consultar.addActionListener(this);
-        boton_ingresar = new JButton("Ingresar vehiculo nuevo al sistema.");
-        boton_ingresar.setBounds(250,300,300,30);
-        add(boton_ingresar);
-        boton_ingresar.addActionListener(this);
-        boton_proceso = new JButton("Ingresar vehiculo nuevo al sistema.");
-        boton_proceso.setBounds(250,350,300,30);
-        add(boton_proceso);
-        boton_proceso.addActionListener(this);
+        textfield_usuario = new JTextField();
+        textfield_usuario.setBounds(370,287,150,20);
+        add(textfield_usuario);
+        textfield_contraseña = new JTextField();
+        textfield_contraseña.setBounds(370,317,150,20);
+        add(textfield_contraseña);
+        
+        boton_verificación = new JButton("Verificar credenciales");
+        boton_verificación.setBounds(250,390,150,30);
+        add(boton_verificación);
+        boton_verificación.addActionListener(this);
  }
 
+// Accion de los objetos
  public void actionPerformed(ActionEvent e){
-    
+     
     Container fondo = this.getContentPane();
 //barra de herramientas
     if(e.getSource() == menuitem1){
@@ -82,23 +85,23 @@ public class Ventana_2 extends JFrame implements ActionListener{
     }
     if(e.getSource() == menuitem4){
        System.exit(0);
-    } 
-     //botones
-    if(e.getSource() == boton_consultar){
-        System.exit(0);
     }
-    if(e.getSource() == boton_ingresar){
+    //boton de verificación
+    if(e.getSource() == boton_verificación){
+        String u_in = textfield_usuario.getText();
+        String c_in = textfield_contraseña.getText();
+        if (u_in == usuario && c_in == contraseña){        
         System.exit(0);
-    }
-    if(e.getSource() == boton_proceso){
+        } else {
         System.exit(0);
+        }
     }
- }
+ } 
  
-//Ventana y caract
+
  public static void main(String args[]){
     
-    Ventana_2 formulario1 = new Ventana_2();
+    Interfaz formulario1 = new Interfaz();
     formulario1.setBounds(0,0,800,500);
     formulario1.setVisible(true);
     formulario1.setResizable(false);

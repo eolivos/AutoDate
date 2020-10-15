@@ -1,20 +1,51 @@
+package autodate;
 import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
 //ventana ingreso del vehiculo
 public class Ventana_1 extends JFrame implements ActionListener{
 
-    private JMenuBar mb;
-    private JMenu Opciones, Volver;
+    private JMenuBar menubar;
+    private JMenu menu1, menu2;
+    private JMenuItem menuitem1, menuitem2, menuitem3, menuitem4;
     private JTextField textfield_Fecha, textfield_titular, textfield_marca, textfield_modelo, textfield_motor, textfield_color, textfield_contacto, textfield_Observaciones;
-    private JLabel label_inicio, label_Fecha, label_titular, label_marca, label_modelo, label_motor, label_color, label_contacto, label_Observaciones;
+    private JLabel label_inicio, label_Fecha, label_titular, label_marca, label_modelo, label_motor, label_color, label_contacto, label_Observaciones, label_imagen;
     private JButton boton_verificación;
-    String usuario="1", contraseña="2";
     
     public Ventana_1(){
         
         setLayout(null);
         setTitle("Autodate");
+        getContentPane().setBackground(new Color(174,214,241));
+        setIconImage(new ImageIcon(getClass().getResource("images/carro.png")).getImage());
+        
+        label_imagen = new JLabel();
+        label_imagen.setIcon(new ImageIcon(getClass().getResource("images/carro.png")));
+        label_imagen.setBounds(25,100,420,200);
+        add(label_imagen);
+        
+        menubar = new JMenuBar();
+        setJMenuBar(menubar);
+
+        menu1 = new JMenu("Opciones");
+        menubar.add(menu1);
+
+        menuitem1 = new JMenuItem("Blanco");
+        menuitem1.addActionListener(this);
+        menu1.add(menuitem1);
+
+        menuitem2 = new JMenuItem("Azul");
+        menuitem2.addActionListener(this);
+        menu1.add(menuitem2);
+
+        menuitem3 = new JMenuItem("Gris");
+        menuitem3.addActionListener(this);
+        menu1.add(menuitem3);
+        
+        menuitem4 = new JMenuItem("Volver al inicio");
+        menuitem4.addActionListener(this);
+        menu1.add(menuitem4);
+        
         label_inicio = new JLabel("Porfavor ingrese la informacion del vehiculo. Complete TODOS los espacios.");
         label_inicio.setBounds(200,20,450,30);
         add(label_inicio);
@@ -78,6 +109,21 @@ public class Ventana_1 extends JFrame implements ActionListener{
 
  public void actionPerformed(ActionEvent e){
     
+     Container fondo = this.getContentPane();
+//barra de herramientas
+    if(e.getSource() == menuitem1){
+       fondo.setBackground(new Color(254,254,254));
+    }
+    if(e.getSource() == menuitem2){
+       fondo.setBackground(new Color(174,214,241));
+    }
+    if(e.getSource() == menuitem3){
+       fondo.setBackground(new Color(214,219,223));
+    }
+    if(e.getSource() == menuitem4){
+       System.exit(0);
+    }
+    //botones
     if(e.getSource() == boton_verificación){    
         System.exit(0);
     }
