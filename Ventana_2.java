@@ -68,9 +68,9 @@ public class Ventana_2 extends JFrame implements ActionListener{
  }
 
  public void actionPerformed(ActionEvent e){
-    
+    //barra de herramientas
     Container fondo = this.getContentPane();
-//barra de herramientas
+
     if(e.getSource() == menuitem1){
        fondo.setBackground(new Color(254,254,254));
     }
@@ -81,14 +81,30 @@ public class Ventana_2 extends JFrame implements ActionListener{
        fondo.setBackground(new Color(214,219,223));
     }
     if(e.getSource() == menuitem4){
-       System.exit(0);
+       Ventana_2 Ventana2 = new Ventana_2();
+       Ventana2.setBounds(0,0,800,500);
+       Ventana2.setVisible(true);
+       Ventana2.setResizable(false);
+       Ventana2.setLocationRelativeTo(null);
+       this.setVisible(false);
+       this.setVisible(false);
     } 
      //botones
     if(e.getSource() == boton_consultar){
-        System.exit(0);
+    Ventana_03 Ventana03 = new Ventana_03();
+    Ventana03.setBounds(0,0,800,500);
+    Ventana03.setVisible(true);
+    Ventana03.setResizable(false);
+    Ventana03.setLocationRelativeTo(null);
+    this.setVisible(false);
     }
     if(e.getSource() == boton_ingresar){
-        System.exit(0);
+    Ventana_02 Ventana02 = new Ventana_02();
+    Ventana02.setBounds(0,0,800,500);
+    Ventana02.setVisible(true);
+    Ventana02.setResizable(false);
+    Ventana02.setLocationRelativeTo(null);
+    
     }
     if(e.getSource() == boton_proceso){
         System.exit(0);
@@ -98,10 +114,10 @@ public class Ventana_2 extends JFrame implements ActionListener{
 //Ventana y caract
  public static void main(String args[]){
     
-    Ventana_2 formulario1 = new Ventana_2();
-    formulario1.setBounds(0,0,800,500);
-    formulario1.setVisible(true);
-    formulario1.setResizable(false);
-    formulario1.setLocationRelativeTo(null);
+    Ventana_2 Ventana2 = new Ventana_2();
+    Ventana2.setBounds(0,0,800,500);
+    Ventana2.setVisible(true);
+    Ventana2.setResizable(false);
+    Ventana2.setLocationRelativeTo(null);
     }
 }

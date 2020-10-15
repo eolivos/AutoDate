@@ -84,16 +84,31 @@ public class Ventana_0 extends JFrame implements ActionListener{
        fondo.setBackground(new Color(214,219,223));
     }
     if(e.getSource() == menuitem4){
-       System.exit(0);
+        Ventana_0 Ventana0 = new Ventana_0();
+        Ventana0.setBounds(0,0,800,500);
+        Ventana0.setVisible(true);
+        Ventana0.setResizable(false);
+        Ventana0.setLocationRelativeTo(null);
+        this.setVisible(false);
     }
     //boton de verificación
     if(e.getSource() == boton_verificación){
         String u_in = textfield_usuario.getText();
         String c_in = textfield_contraseña.getText();
         if (u_in == usuario && c_in == contraseña){        
-        System.exit(0);
+        Ventana_1 Ventana1 = new Ventana_1();
+        Ventana1.setBounds(0,0,800,500);
+        Ventana1.setVisible(true);
+        Ventana1.setResizable(false);
+        Ventana1.setLocationRelativeTo(null);
+        this.setVisible(false);
         } else {
-        System.exit(0);
+        Ventana_2 Ventana2 = new Ventana_2();
+        Ventana2.setBounds(0,0,800,500);
+        Ventana2.setVisible(true);
+        Ventana2.setResizable(false);
+        Ventana2.setLocationRelativeTo(null);
+        this.setVisible(false);
         }
     }
  } 
@@ -101,10 +116,10 @@ public class Ventana_0 extends JFrame implements ActionListener{
 
  public static void main(String args[]){
     
-    Ventana_0 formulario1 = new Ventana_0();
-    formulario1.setBounds(0,0,800,500);
-    formulario1.setVisible(true);
-    formulario1.setResizable(false);
-    formulario1.setLocationRelativeTo(null);
+    Ventana_0 Ventana0 = new Ventana_0();
+    Ventana0.setBounds(0,0,800,500);
+    Ventana0.setVisible(true);
+    Ventana0.setResizable(false);
+    Ventana0.setLocationRelativeTo(null);
     }
 }

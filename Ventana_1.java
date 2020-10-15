@@ -121,21 +121,26 @@ public class Ventana_1 extends JFrame implements ActionListener{
        fondo.setBackground(new Color(214,219,223));
     }
     if(e.getSource() == menuitem4){
-       System.exit(0);
+       Ventana_2 Ventana2 = new Ventana_2();
+        Ventana2.setBounds(0,0,800,500);
+        Ventana2.setVisible(true);
+        Ventana2.setResizable(false);
+        Ventana2.setLocationRelativeTo(null);
+        this.setVisible(false);
     }
     //botones
     if(e.getSource() == boton_verificación){    
-        System.exit(0);
+    System.exit(0);
     }
  } 
  
 //Ventana y caract
  public static void main(String args[]){
     
-    Ventana_1 formulario1 = new Ventana_1();
-    formulario1.setBounds(0,0,800,500);
-    formulario1.setVisible(true);
-    formulario1.setResizable(false);
-    formulario1.setLocationRelativeTo(null);
+    Ventana_1 Ventana1 = new Ventana_1();
+    Ventana1.setBounds(0,0,800,500);
+    Ventana1.setVisible(true);
+    Ventana1.setResizable(false);
+    Ventana1.setLocationRelativeTo(null);
     }
 }
