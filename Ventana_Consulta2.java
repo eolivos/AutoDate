@@ -4,15 +4,15 @@ import java.awt.event.*;
 import java.awt.*;
 import java.awt.Color;
 
-public class Ventana_3 extends JFrame implements ActionListener{
+public class Ventana_Consulta2 extends JFrame implements ActionListener{
 
     private JMenuBar menubar;
     private JMenu menu1, menu2;
-    private JMenuItem menuitem1, menuitem2, menuitem3, menuitem4;
+    private JMenuItem menuitem1, menuitem2, menuitem3, menuitem4, menuitem5, menuitem6;
   private JLabel label1, label2, label3, label4, label5, label6, label_imagen1;
-  private JButton boton1;
+  private JButton boton1, boton2;
 
-  public Ventana_3(){
+  public Ventana_Consulta2(){
 
    setLayout(null);
         setTitle("Autodate");
@@ -42,9 +42,17 @@ public class Ventana_3 extends JFrame implements ActionListener{
         menuitem3.addActionListener(this);
         menu1.add(menuitem3);
         
-        menuitem4 = new JMenuItem("Volver al inicio");
+        menuitem4 = new JMenuItem("Menú principal");
         menuitem4.addActionListener(this);
         menu1.add(menuitem4);
+        
+        menuitem5 = new JMenuItem("Cerrar Sesión");
+        menuitem5.addActionListener(this);
+        menu1.add(menuitem5);
+        
+        menuitem6 = new JMenuItem("Salir");
+        menuitem6.addActionListener(this);
+        menu1.add(menuitem6);
         
    label1 = new JLabel ("El vehiculo de placas EJEMPLO esta en estado optimo");
    label1.setBounds(270,50,1000,100);
@@ -63,17 +71,22 @@ public class Ventana_3 extends JFrame implements ActionListener{
    add(label4);
 
    label5 = new JLabel ("El vehiculo de placas PLACA debe realizar PROCEDIMIENTO");
-   label5.setBounds(240,200,1000,100);
+   label5.setBounds(220,200,1000,100);
    add(label5);
 
    label6 = new JLabel ("Puede contactar al ususario por medio del suiguiente dato CONTACTO");
    label6.setBounds(220,220,1000,100);
    add(label6);
 
-   boton1 = new JButton("Siguiente");
-   boton1.setBounds(370,300,100,30);
+   boton1 = new JButton("Consultar otro vehiculo");
+   boton1.setBounds(100,350,250,30);
    add(boton1);
    boton1.addActionListener(this);
+   
+   boton2 = new JButton("Volver al menu principal");
+   boton2.setBounds(400,350,250,30);
+   add(boton2);
+   boton2.addActionListener(this);
   }
 
   public void actionPerformed(ActionEvent e){
@@ -89,24 +102,48 @@ public class Ventana_3 extends JFrame implements ActionListener{
        fondo.setBackground(new Color(214,219,223));
     }
     if(e.getSource() == menuitem4){
-       Ventana_2 Ventana2 = new Ventana_2();
-        Ventana2.setBounds(0,0,800,500);
-        Ventana2.setVisible(true);
-        Ventana2.setResizable(false);
-        Ventana2.setLocationRelativeTo(null);
+       Ventana_MenuPrincipal VentanaMenuPrincipal = new Ventana_MenuPrincipal();
+        VentanaMenuPrincipal.setBounds(0,0,800,500);
+        VentanaMenuPrincipal.setVisible(true);
+        VentanaMenuPrincipal.setResizable(false);
+        VentanaMenuPrincipal.setLocationRelativeTo(null);
         this.setVisible(false); 
     }
+    if(e.getSource() == menuitem5){
+        Ventana_Usuario VentanaUsuario = new Ventana_Usuario();
+        VentanaUsuario.setBounds(0,0,800,500);
+        VentanaUsuario.setVisible(true);
+        VentanaUsuario.setResizable(false);
+        VentanaUsuario.setLocationRelativeTo(null);
+        this.setVisible(false);
+    }
+    if(e.getSource() == menuitem6){
+        System.exit(0);
+    }
     if(e.getSource() == boton1){
-     System.exit(0);
+        Ventana_Consulta1 VentanaConsulta1 = new Ventana_Consulta1();
+        VentanaConsulta1.setBounds(0,0,800,500);
+        VentanaConsulta1.setVisible(true);
+        VentanaConsulta1.setResizable(false);
+        VentanaConsulta1.setLocationRelativeTo(null);
+        this.setVisible(false);
+    }
+     if(e.getSource() == boton2){
+        Ventana_MenuPrincipal VentanaMenuPrincipal = new Ventana_MenuPrincipal();
+        VentanaMenuPrincipal.setBounds(0,0,800,500);
+        VentanaMenuPrincipal.setVisible(true);
+        VentanaMenuPrincipal.setResizable(false);
+        VentanaMenuPrincipal.setLocationRelativeTo(null);
+        this.setVisible(false);
    }
   }
  
 
-  public static void main(String args[]){
-  Ventana_3 Ventana3 = new Ventana_3();
-  Ventana3.setBounds(0,0,800,500);
-  Ventana3.setVisible(true);
-  Ventana3.setResizable(false);
-  Ventana3.setLocationRelativeTo(null);
+    public static void main(String args[]){
+    Ventana_Consulta2 VentanaConsulta2 = new Ventana_Consulta2();
+    VentanaConsulta2.setBounds(0,0,800,500);
+    VentanaConsulta2.setVisible(true);
+    VentanaConsulta2.setResizable(false);
+    VentanaConsulta2.setLocationRelativeTo(null);
  }
 }

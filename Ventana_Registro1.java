@@ -4,16 +4,16 @@ import java.awt.event.*;
 import java.awt.*;
 import java.awt.Color;
 
-public class Ventana_02 extends JFrame implements ActionListener{
+public class Ventana_Registro1 extends JFrame implements ActionListener{
 
     private JMenuBar menubar;
     private JMenu menu1, menu2;
-    private JMenuItem menuitem1, menuitem2, menuitem3, menuitem4;
+    private JMenuItem menuitem1, menuitem2, menuitem3, menuitem4, menuitem5, menuitem6;
   private JTextField textfield1;
   private JLabel label1, label_imagen2;
   private JButton boton1;
 
-  public Ventana_02(){
+  public Ventana_Registro1(){
 
    setLayout(null);
         setTitle("Autodate");
@@ -22,10 +22,10 @@ public class Ventana_02 extends JFrame implements ActionListener{
             
         label_imagen2 = new JLabel();
         label_imagen2.setIcon(new ImageIcon(getClass().getResource("images/carro.png")));
-        label_imagen2.setBounds(0,100,420,200);
+        label_imagen2.setBounds(260,130,420,200);
         add(label_imagen2);
    
-   menubar = new JMenuBar();
+        menubar = new JMenuBar();
         setJMenuBar(menubar);
 
         menu1 = new JMenu("Opciones");
@@ -43,20 +43,28 @@ public class Ventana_02 extends JFrame implements ActionListener{
         menuitem3.addActionListener(this);
         menu1.add(menuitem3);
         
-        menuitem4 = new JMenuItem("Volver al inicio");
+        menuitem4 = new JMenuItem("Menú principal");
         menuitem4.addActionListener(this);
         menu1.add(menuitem4);
+        
+        menuitem5 = new JMenuItem("Cerrar Sesión");
+        menuitem5.addActionListener(this);
+        menu1.add(menuitem5);
+        
+        menuitem6 = new JMenuItem("Salir");
+        menuitem6.addActionListener(this);
+        menu1.add(menuitem6);
 
    label1 = new JLabel ("Ingrese la placa del vehiculo a registrar");
    label1.setBounds(285,30,1000,100);
    add(label1);
 
    textfield1 = new JTextField();
-   textfield1.setBounds(320,115,150,20);
+   textfield1.setBounds(320,100,150,20);
    add(textfield1);
 
    boton1 = new JButton("Siguiente");
-   boton1.setBounds(350,250,100,30);
+   boton1.setBounds(350,350,100,30);
    add(boton1);
    boton1.addActionListener(this);
   }
@@ -74,31 +82,41 @@ public class Ventana_02 extends JFrame implements ActionListener{
     fondo.setBackground(new Color(214,219,223));
     }
     if(e.getSource() == menuitem4){
-       Ventana_2 Ventana2 = new Ventana_2();
-       Ventana2.setBounds(0,0,800,500);
-       Ventana2.setVisible(true);
-       Ventana2.setResizable(false);
-       Ventana2.setLocationRelativeTo(null);
-       this.setVisible(false);
-       this.setVisible(false);
-    } 
+       Ventana_MenuPrincipal VentanaMenuPrincipal = new Ventana_MenuPrincipal();
+        VentanaMenuPrincipal.setBounds(0,0,800,500);
+        VentanaMenuPrincipal.setVisible(true);
+        VentanaMenuPrincipal.setResizable(false);
+        VentanaMenuPrincipal.setLocationRelativeTo(null);
+        this.setVisible(false);
+    }
+    if(e.getSource() == menuitem5){
+        Ventana_Usuario VentanaUsuario = new Ventana_Usuario();
+        VentanaUsuario.setBounds(0,0,800,500);
+        VentanaUsuario.setVisible(true);
+        VentanaUsuario.setResizable(false);
+        VentanaUsuario.setLocationRelativeTo(null);
+        this.setVisible(false);
+    }
+    if(e.getSource() == menuitem6){
+        System.exit(0);
+    }
       
     if(e.getSource() == boton1){
-    Ventana_1 Ventana1 = new Ventana_1();
-    Ventana1.setBounds(0,0,800,500);
-    Ventana1.setVisible(true);
-    Ventana1.setResizable(false);
-    Ventana1.setLocationRelativeTo(null);
-    this.setVisible(false);
+        Ventana_Registro2 VentanaRegistro2 = new Ventana_Registro2();
+        VentanaRegistro2.setBounds(0,0,800,500);
+        VentanaRegistro2.setVisible(true);
+        VentanaRegistro2.setResizable(false);
+        VentanaRegistro2.setLocationRelativeTo(null);
+        this.setVisible(false);
    }
   }
 
 
   public static void main(String args[]){
-  Ventana_02 Ventana02 = new Ventana_02();
-  Ventana02.setBounds(0,0,800,500);
-  Ventana02.setVisible(true);
-  Ventana02.setResizable(false);
-  Ventana02.setLocationRelativeTo(null);
+  Ventana_Registro1 VentanaRegistro1 = new Ventana_Registro1();
+  VentanaRegistro1.setBounds(0,0,800,500);
+  VentanaRegistro1.setVisible(true);
+  VentanaRegistro1.setResizable(false);
+  VentanaRegistro1.setLocationRelativeTo(null);
  }
 }

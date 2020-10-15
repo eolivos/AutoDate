@@ -4,15 +4,15 @@ import java.awt.event.*;
 import java.awt.*;
 import java.awt.Color;
 //ventana ingreso del vehiculo
-public class Ventana_2 extends JFrame implements ActionListener{
+public class Ventana_MenuPrincipal extends JFrame implements ActionListener{
 
     private JMenuBar menubar;
     private JMenu menu1, menu2;
-    private JMenuItem menuitem1, menuitem2, menuitem3, menuitem4;
+    private JMenuItem menuitem1, menuitem2, menuitem3, menuitem4, menuitem5, menuitem6;
     private JLabel label_operacion1, label_saludo, label_imagen;
     private JButton boton_consultar, boton_ingresar, boton_proceso;
     
-    public Ventana_2(){
+    public Ventana_MenuPrincipal(){
         
         setLayout(null);
         setTitle("Autodate");
@@ -42,9 +42,17 @@ public class Ventana_2 extends JFrame implements ActionListener{
         menuitem3.addActionListener(this);
         menu1.add(menuitem3);
         
-        menuitem4 = new JMenuItem("Volver al inicio");
+        menuitem4 = new JMenuItem("Menú principal");
         menuitem4.addActionListener(this);
         menu1.add(menuitem4);
+        
+        menuitem5 = new JMenuItem("Cerrar Sesión");
+        menuitem5.addActionListener(this);
+        menu1.add(menuitem5);
+        
+        menuitem6 = new JMenuItem("Salir");
+        menuitem6.addActionListener(this);
+        menu1.add(menuitem6);
         
         label_saludo = new JLabel("Ingreso exitoso. Bienvenido de nuevo operador.");
         label_saludo.setBounds(250,50,450,30);
@@ -61,7 +69,7 @@ public class Ventana_2 extends JFrame implements ActionListener{
         boton_ingresar.setBounds(250,200,300,30);
         add(boton_ingresar);
         boton_ingresar.addActionListener(this);
-        boton_proceso = new JButton("Ingresar vehiculo nuevo al sistema.");
+        boton_proceso = new JButton("Ingresar procedimiento a un vehiculo del sistema.");
         boton_proceso.setBounds(250,250,300,30);
         add(boton_proceso);
         boton_proceso.addActionListener(this);
@@ -81,29 +89,40 @@ public class Ventana_2 extends JFrame implements ActionListener{
        fondo.setBackground(new Color(214,219,223));
     }
     if(e.getSource() == menuitem4){
-       Ventana_2 Ventana2 = new Ventana_2();
-       Ventana2.setBounds(0,0,800,500);
-       Ventana2.setVisible(true);
-       Ventana2.setResizable(false);
-       Ventana2.setLocationRelativeTo(null);
-       this.setVisible(false);
-       this.setVisible(false);
+       Ventana_MenuPrincipal VentanaMenuPrincipal = new Ventana_MenuPrincipal();
+        VentanaMenuPrincipal.setBounds(0,0,800,500);
+        VentanaMenuPrincipal.setVisible(true);
+        VentanaMenuPrincipal.setResizable(false);
+        VentanaMenuPrincipal.setLocationRelativeTo(null);
+        this.setVisible(false);
     } 
+    if(e.getSource() == menuitem5){
+        Ventana_Usuario VentanaUsuario = new Ventana_Usuario();
+        VentanaUsuario.setBounds(0,0,800,500);
+        VentanaUsuario.setVisible(true);
+        VentanaUsuario.setResizable(false);
+        VentanaUsuario.setLocationRelativeTo(null);
+        this.setVisible(false);
+    }
+    if(e.getSource() == menuitem6){
+        System.exit(0);
+    }
      //botones
     if(e.getSource() == boton_consultar){
-    Ventana_03 Ventana03 = new Ventana_03();
-    Ventana03.setBounds(0,0,800,500);
-    Ventana03.setVisible(true);
-    Ventana03.setResizable(false);
-    Ventana03.setLocationRelativeTo(null);
-    this.setVisible(false);
+        Ventana_Consulta1 VentanaConsulta1 = new Ventana_Consulta1();
+        VentanaConsulta1.setBounds(0,0,800,500);
+        VentanaConsulta1.setVisible(true);
+        VentanaConsulta1.setResizable(false);
+        VentanaConsulta1.setLocationRelativeTo(null);
+        this.setVisible(false);
     }
     if(e.getSource() == boton_ingresar){
-    Ventana_02 Ventana02 = new Ventana_02();
-    Ventana02.setBounds(0,0,800,500);
-    Ventana02.setVisible(true);
-    Ventana02.setResizable(false);
-    Ventana02.setLocationRelativeTo(null);
+        Ventana_Registro1 VentanaRegistro1 = new Ventana_Registro1();
+        VentanaRegistro1.setBounds(0,0,800,500);
+        VentanaRegistro1.setVisible(true);
+        VentanaRegistro1.setResizable(false);
+        VentanaRegistro1.setLocationRelativeTo(null);
+        this.setVisible(false);
     
     }
     if(e.getSource() == boton_proceso){
@@ -114,10 +133,10 @@ public class Ventana_2 extends JFrame implements ActionListener{
 //Ventana y caract
  public static void main(String args[]){
     
-    Ventana_2 Ventana2 = new Ventana_2();
-    Ventana2.setBounds(0,0,800,500);
-    Ventana2.setVisible(true);
-    Ventana2.setResizable(false);
-    Ventana2.setLocationRelativeTo(null);
+    Ventana_MenuPrincipal VentanaMenuPrincipal = new Ventana_MenuPrincipal();
+    VentanaMenuPrincipal.setBounds(0,0,800,500);
+    VentanaMenuPrincipal.setVisible(true);
+    VentanaMenuPrincipal.setResizable(false);
+    VentanaMenuPrincipal.setLocationRelativeTo(null);
     }
 }

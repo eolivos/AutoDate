@@ -3,16 +3,16 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
 
-public class Ventana_0 extends JFrame implements ActionListener{
+public class Ventana_Usuario extends JFrame implements ActionListener{
     private JMenuBar menubar;
     private JMenu menu1, menu2;
-    private JMenuItem menuitem1, menuitem2, menuitem3, menuitem4;
+    private JMenuItem menuitem1, menuitem2, menuitem3, menuitem4, menuitem5;
     private JTextField textfield_usuario, textfield_contraseña;
     private JLabel label_bienvenida, label_usuario, label_contraseña, label_imagen;
     private JButton boton_verificación;
     String usuario="1", contraseña="2";
     
-    public Ventana_0(){
+    public Ventana_Usuario(){
         
         setLayout(null);
         setTitle("Autodate");
@@ -45,6 +45,10 @@ public class Ventana_0 extends JFrame implements ActionListener{
         menuitem4 = new JMenuItem("Volver al inicio");
         menuitem4.addActionListener(this);
         menu1.add(menuitem4);
+        
+        menuitem5 = new JMenuItem("Salir");
+        menuitem5.addActionListener(this);
+        menu1.add(menuitem5);
         
         label_bienvenida = new JLabel("Buen dia operador. " + "\n\n" + "Por favor ingrese su usuario y contraseña.");
         label_bienvenida.setBounds(200,140,500,200);
@@ -84,30 +88,33 @@ public class Ventana_0 extends JFrame implements ActionListener{
        fondo.setBackground(new Color(214,219,223));
     }
     if(e.getSource() == menuitem4){
-        Ventana_0 Ventana0 = new Ventana_0();
+        Ventana_Usuario Ventana0 = new Ventana_Usuario();
         Ventana0.setBounds(0,0,800,500);
         Ventana0.setVisible(true);
         Ventana0.setResizable(false);
         Ventana0.setLocationRelativeTo(null);
         this.setVisible(false);
     }
+    if(e.getSource() == menuitem5){
+        System.exit(0);
+    }
     //boton de verificación
     if(e.getSource() == boton_verificación){
         String u_in = textfield_usuario.getText();
         String c_in = textfield_contraseña.getText();
         if (u_in == usuario && c_in == contraseña){        
-        Ventana_1 Ventana1 = new Ventana_1();
-        Ventana1.setBounds(0,0,800,500);
-        Ventana1.setVisible(true);
-        Ventana1.setResizable(false);
-        Ventana1.setLocationRelativeTo(null);
+        Ventana_Registro2 VentanaRegistro2 = new Ventana_Registro2();
+        VentanaRegistro2.setBounds(0,0,800,500);
+        VentanaRegistro2.setVisible(true);
+        VentanaRegistro2.setResizable(false);
+        VentanaRegistro2.setLocationRelativeTo(null);
         this.setVisible(false);
         } else {
-        Ventana_2 Ventana2 = new Ventana_2();
-        Ventana2.setBounds(0,0,800,500);
-        Ventana2.setVisible(true);
-        Ventana2.setResizable(false);
-        Ventana2.setLocationRelativeTo(null);
+        Ventana_MenuPrincipal VentanaMenuPrincipal = new Ventana_MenuPrincipal();
+        VentanaMenuPrincipal.setBounds(0,0,800,500);
+        VentanaMenuPrincipal.setVisible(true);
+        VentanaMenuPrincipal.setResizable(false);
+        VentanaMenuPrincipal.setLocationRelativeTo(null);
         this.setVisible(false);
         }
     }
@@ -116,10 +123,10 @@ public class Ventana_0 extends JFrame implements ActionListener{
 
  public static void main(String args[]){
     
-    Ventana_0 Ventana0 = new Ventana_0();
-    Ventana0.setBounds(0,0,800,500);
-    Ventana0.setVisible(true);
-    Ventana0.setResizable(false);
-    Ventana0.setLocationRelativeTo(null);
+    Ventana_Usuario VentanaUsuario = new Ventana_Usuario();
+    VentanaUsuario.setBounds(0,0,800,500);
+    VentanaUsuario.setVisible(true);
+    VentanaUsuario.setResizable(false);
+    VentanaUsuario.setLocationRelativeTo(null);
     }
 }

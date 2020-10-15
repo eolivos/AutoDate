@@ -3,16 +3,16 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
 //ventana ingreso del vehiculo
-public class Ventana_1 extends JFrame implements ActionListener{
+public class Ventana_Registro2 extends JFrame implements ActionListener{
 
     private JMenuBar menubar;
     private JMenu menu1, menu2;
-    private JMenuItem menuitem1, menuitem2, menuitem3, menuitem4;
+    private JMenuItem menuitem1, menuitem2, menuitem3, menuitem4, menuitem5, menuitem6;
     private JTextField textfield_Fecha, textfield_titular, textfield_marca, textfield_modelo, textfield_motor, textfield_color, textfield_contacto, textfield_Observaciones;
     private JLabel label_inicio, label_Fecha, label_titular, label_marca, label_modelo, label_motor, label_color, label_contacto, label_Observaciones, label_imagen;
     private JButton boton_verificación;
     
-    public Ventana_1(){
+    public Ventana_Registro2(){
         
         setLayout(null);
         setTitle("Autodate");
@@ -42,9 +42,17 @@ public class Ventana_1 extends JFrame implements ActionListener{
         menuitem3.addActionListener(this);
         menu1.add(menuitem3);
         
-        menuitem4 = new JMenuItem("Volver al inicio");
+        menuitem4 = new JMenuItem("Menú principal");
         menuitem4.addActionListener(this);
         menu1.add(menuitem4);
+        
+        menuitem5 = new JMenuItem("Cerrar Sesión");
+        menuitem5.addActionListener(this);
+        menu1.add(menuitem5);
+        
+        menuitem6 = new JMenuItem("Salir");
+        menuitem6.addActionListener(this);
+        menu1.add(menuitem6);
         
         label_inicio = new JLabel("Porfavor ingrese la informacion del vehiculo. Complete TODOS los espacios.");
         label_inicio.setBounds(200,20,450,30);
@@ -121,26 +129,42 @@ public class Ventana_1 extends JFrame implements ActionListener{
        fondo.setBackground(new Color(214,219,223));
     }
     if(e.getSource() == menuitem4){
-       Ventana_2 Ventana2 = new Ventana_2();
-        Ventana2.setBounds(0,0,800,500);
-        Ventana2.setVisible(true);
-        Ventana2.setResizable(false);
-        Ventana2.setLocationRelativeTo(null);
+       Ventana_MenuPrincipal VentanaMenuPrincipal = new Ventana_MenuPrincipal();
+        VentanaMenuPrincipal.setBounds(0,0,800,500);
+        VentanaMenuPrincipal.setVisible(true);
+        VentanaMenuPrincipal.setResizable(false);
+        VentanaMenuPrincipal.setLocationRelativeTo(null);
         this.setVisible(false);
+    }
+    if(e.getSource() == menuitem5){
+        Ventana_Usuario VentanaUsuario = new Ventana_Usuario();
+        VentanaUsuario.setBounds(0,0,800,500);
+        VentanaUsuario.setVisible(true);
+        VentanaUsuario.setResizable(false);
+        VentanaUsuario.setLocationRelativeTo(null);
+        this.setVisible(false);
+    }
+    if(e.getSource() == menuitem6){
+        System.exit(0);
     }
     //botones
     if(e.getSource() == boton_verificación){    
-    System.exit(0);
+        Ventana_Registro3 VentanaRegistro3 = new Ventana_Registro3();
+        VentanaRegistro3.setBounds(0,0,800,500);
+        VentanaRegistro3.setVisible(true);
+        VentanaRegistro3.setResizable(false);
+        VentanaRegistro3.setLocationRelativeTo(null);
+        this.setVisible(false);
     }
  } 
  
 //Ventana y caract
  public static void main(String args[]){
     
-    Ventana_1 Ventana1 = new Ventana_1();
-    Ventana1.setBounds(0,0,800,500);
-    Ventana1.setVisible(true);
-    Ventana1.setResizable(false);
-    Ventana1.setLocationRelativeTo(null);
+    Ventana_Registro2 VentanaRegistro2 = new Ventana_Registro2();
+    VentanaRegistro2.setBounds(0,0,800,500);
+    VentanaRegistro2.setVisible(true);
+    VentanaRegistro2.setResizable(false);
+    VentanaRegistro2.setLocationRelativeTo(null);
     }
 }
