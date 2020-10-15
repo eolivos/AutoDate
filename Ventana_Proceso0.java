@@ -4,27 +4,28 @@ import java.awt.event.*;
 import java.awt.*;
 import java.awt.Color;
 
-public class Ventana_Proceso2 extends JFrame implements ActionListener{
+public class Ventana_Proceso0 extends JFrame implements ActionListener{
 
     private JMenuBar menubar;
     private JMenu menu1, menu2;
     private JMenuItem menuitem1, menuitem2, menuitem3, menuitem4, menuitem5, menuitem6;
-  private JLabel label1, label_imagen1;
-  private JButton boton1, boton2;
+  private JTextField textfield1;
+  private JLabel label1, label_imagen3;
+  private JButton boton1;
 
-  public Ventana_Proceso2(){
+  public Ventana_Proceso0(){
 
-   setLayout(null);
+    setLayout(null);
         setTitle("Autodate");
         getContentPane().setBackground(new Color(174,214,241));
         setIconImage(new ImageIcon(getClass().getResource("images/carro.png")).getImage());
             
-        label_imagen1 = new JLabel();
-        label_imagen1.setIcon(new ImageIcon(getClass().getResource("images/carro.png")));
-        label_imagen1.setBounds(0,100,420,200);
-        add(label_imagen1);
-
-   menubar = new JMenuBar();
+        label_imagen3 = new JLabel();
+        label_imagen3.setIcon(new ImageIcon(getClass().getResource("images/carro.png")));
+        label_imagen3.setBounds(260,130,420,200);
+        add(label_imagen3);
+   
+        menubar = new JMenuBar();
         setJMenuBar(menubar);
 
         menu1 = new JMenu("Opciones");
@@ -54,23 +55,21 @@ public class Ventana_Proceso2 extends JFrame implements ActionListener{
         menuitem6.addActionListener(this);
         menu1.add(menuitem6);
         
-   label1 = new JLabel ("El proceso PROCESO se añadio correctmente");
-   label1.setBounds(270,50,1000,100);
+   label1 = new JLabel ("Ingrese la placa del vehiculo al cual desea añadir un proceso");
+   label1.setBounds(200,20,1000,100);
    add(label1);
 
-   boton1 = new JButton("Añadir otro procedimiento");
-   boton1.setBounds(100,350,250,30);
+   textfield1 = new JTextField();
+   textfield1.setBounds(320,100,150,20);
+   add(textfield1);
+
+   boton1 = new JButton("Siguiente");
+   boton1.setBounds(350,350,100,30);
    add(boton1);
    boton1.addActionListener(this);
-   
-   boton2 = new JButton("Volver al menu principal");
-   boton2.setBounds(400,350,250,30);
-   add(boton2);
-   boton2.addActionListener(this);
   }
 
   public void actionPerformed(ActionEvent e){
-   
     Container fondo = this.getContentPane();
     if(e.getSource() == menuitem1){
        fondo.setBackground(new Color(254,254,254));
@@ -87,43 +86,36 @@ public class Ventana_Proceso2 extends JFrame implements ActionListener{
         VentanaMenuPrincipal.setVisible(true);
         VentanaMenuPrincipal.setResizable(false);
         VentanaMenuPrincipal.setLocationRelativeTo(null);
-        this.setVisible(false); 
+        this.setVisible(false);
     }
     if(e.getSource() == menuitem5){
-        Ventana_Proceso1 VentanaProceso1 = new Ventana_Proceso1();
-        VentanaProceso1.setBounds(0,0,800,500);
-        VentanaProceso1.setVisible(true);
-        VentanaProceso1.setResizable(false);
-        VentanaProceso1.setLocationRelativeTo(null);
+        Ventana_Usuario VentanaUsuario = new Ventana_Usuario();
+        VentanaUsuario.setBounds(0,0,800,500);
+        VentanaUsuario.setVisible(true);
+        VentanaUsuario.setResizable(false);
+        VentanaUsuario.setLocationRelativeTo(null);
         this.setVisible(false);
     }
     if(e.getSource() == menuitem6){
         System.exit(0);
     }
-    if(e.getSource() == boton1){
-        Ventana_Proceso1 VentanaProceso1 = new Ventana_Proceso1();
-        VentanaProceso1.setBounds(0,0,800,500);
-        VentanaProceso1.setVisible(true);
-        VentanaProceso1.setResizable(false);
-        VentanaProceso1.setLocationRelativeTo(null);
-        this.setVisible(false);
-    }
-     if(e.getSource() == boton2){
-        Ventana_MenuPrincipal VentanaMenuPrincipal = new Ventana_MenuPrincipal();
-        VentanaMenuPrincipal.setBounds(0,0,800,500);
-        VentanaMenuPrincipal.setVisible(true);
-        VentanaMenuPrincipal.setResizable(false);
-        VentanaMenuPrincipal.setLocationRelativeTo(null);
-        this.setVisible(false);
+    
+    
+   if(e.getSource() == boton1){
+    Ventana_Proceso1 VentanaProceso1 = new Ventana_Proceso1();
+    VentanaProceso1.setBounds(0,0,800,500);
+    VentanaProceso1.setVisible(true);
+    VentanaProceso1.setResizable(false);
+    VentanaProceso1.setLocationRelativeTo(null);
+    this.setVisible(false);
    }
   }
- 
 
-    public static void main(String args[]){
-    Ventana_Proceso2 VentanaProceso2 = new Ventana_Proceso2();
-    VentanaProceso2.setBounds(0,0,800,500);
-    VentanaProceso2.setVisible(true);
-    VentanaProceso2.setResizable(false);
-    VentanaProceso2.setLocationRelativeTo(null);
+  public static void main(String args[]){
+  Ventana_Proceso0 VentanaProceso0 = new Ventana_Proceso0();
+  VentanaProceso0.setBounds(0,0,800,500);
+  VentanaProceso0.setVisible(true);
+  VentanaProceso0.setResizable(false);
+  VentanaProceso0.setLocationRelativeTo(null);
  }
 }

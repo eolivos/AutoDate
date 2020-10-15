@@ -9,8 +9,8 @@ public class Ventana_Consulta2 extends JFrame implements ActionListener{
     private JMenuBar menubar;
     private JMenu menu1, menu2;
     private JMenuItem menuitem1, menuitem2, menuitem3, menuitem4, menuitem5, menuitem6;
-  private JLabel label1, label2, label3, label4, label5, label6, label_imagen1;
-  private JButton boton1, boton2;
+    private JLabel label1, label2, label3, label4, label5, label6, label_imagen1;
+    private JButton boton1, boton2;
 
   public Ventana_Consulta2(){
 

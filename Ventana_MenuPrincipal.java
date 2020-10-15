@@ -126,7 +126,12 @@ public class Ventana_MenuPrincipal extends JFrame implements ActionListener{
     
     }
     if(e.getSource() == boton_proceso){
-        System.exit(0);
+        Ventana_Proceso1 VentanaProceso1 = new Ventana_Proceso1();
+        VentanaProceso1.setBounds(0,0,800,500);
+        VentanaProceso1.setVisible(true);
+        VentanaProceso1.setResizable(false);
+        VentanaProceso1.setLocationRelativeTo(null);
+        this.setVisible(false);
     }
  }
  
