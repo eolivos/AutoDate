@@ -5,7 +5,8 @@ import java.util.Date;
 import org.json.JSONObject;
 
 public class Car {
-	private String id, owner, brand, model, motor, color, contact, observations;
+	private String id, owner;
+	public String brand, model, motor, color, contact, observations;
 	private Date inDate;
 	
 	public Car(String id, String owner, Date date) {
@@ -46,5 +47,11 @@ public class Car {
 	
 	public String getId() {
 		return id;
+	}
+	public Date getInDate() {
+		return inDate;
+	}
+	public String getOwner() {
+		return owner;
 	}
 }
