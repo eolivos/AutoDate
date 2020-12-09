@@ -15,6 +15,9 @@ public class MainFrame extends JFrame{
 	private static MainFrame mFrame;
 	
 	private MainPM mainPM;
+//	como lo que esta guardado en esta lista se consideran PManager
+//	no se podran usar funciones que no existan en PManager, incluso
+//	si la clase principal lo tiene #Polimorfismo
 	private ArrayList<PManager> PMList = new ArrayList<PManager>();
 	
 //	defino el constructor privado, de esa forma no se pueden crear objetos desde fuera de esta clase

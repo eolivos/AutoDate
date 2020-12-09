@@ -174,7 +174,7 @@ public class MainPM extends PManager {
         	mFrame.setPManager(0);
         });
         inButton.addActionListener(e -> {
-        	
+        	mFrame.setPManager(1);
         });
         procButton.addActionListener(e -> {
         	
